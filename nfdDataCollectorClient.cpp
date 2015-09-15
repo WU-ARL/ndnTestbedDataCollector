@@ -211,7 +211,7 @@ namespace ndn {
     runScripts(ndn::Name& interestName)
     {
       std::string result, tmpString;
-      std::string prefix = "./";
+      std::string prefix = "./scripts/";
       FILE* pipe;
       const char* cmd; 
       char buf[BUF_SIZE];
