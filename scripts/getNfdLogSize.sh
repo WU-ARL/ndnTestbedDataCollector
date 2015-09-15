@@ -3,7 +3,7 @@
 # change default to actual log directory
 
 FILENAME="nfd.log"
-DEFAULT="/usr/local/var/log/ndn"
+DEFAULT="/var/log/ndn"
 T_DEFAULT="/tmp"
 if [$1 -eq ""]
 then

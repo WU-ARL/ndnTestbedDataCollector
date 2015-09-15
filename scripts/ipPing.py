@@ -23,6 +23,9 @@ for destination in n:
   proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=True)
   (out, err) = proc.communicate()
   out = out.split("/")
-  result += site + ":" + destination + "+" + out[-2] + "&"
+  if (len(out) == 1):
+    result += site + ":" + destination + "+" + "0" + "&"
+  else:
+    result += site + ":" + destination + "+" + out[-2] + "&"
 
 print result
