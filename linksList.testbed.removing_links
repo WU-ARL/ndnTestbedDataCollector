@@ -27,7 +27,6 @@
 33 /ndn/fr/lip6 192.43.193.111
 34 /ndn/com/orange 192.43.193.111
 35 /ndn/ch/unibas 193.147.51.186
-36 /ndn/ch/unibas 162.105.146.26
 37 /ndn/cn/edu/bupt 133.9.73.66
 38 /ndn/cn/edu/tongji 133.9.73.66
 39 /ndn/edu/arizona 133.9.73.66
@@ -38,7 +37,6 @@
 47 /ndn/kr/anyang 133.9.73.66
 49 /ndn/kr/anyang 114.247.165.44
 52 /ndn/edu/illinois 147.162.114.18
-53 /ndn/ch/unibas 147.162.114.18
 54 /ndn/it/unipd 193.147.51.186
 55 /ndn/it/unipd 161.105.195.18
 56 /ndn/edu/neu 129.241.208.115
@@ -49,7 +47,6 @@
 61 /ndn/com/verisign 141.225.11.173
 62 /ndn/com/verisign 128.252.153.194
 63 /ndn/com/verisign 141.212.108.18
-64 /ndn/kr/re/kisti 210.114.89.49
 65 /ndn/kr/re/kisti 133.9.73.66
 66 /ndn/kr/re/kisti 114.247.165.44
 67 /ndn/kr/re/kisti 129.82.138.48
@@ -77,7 +74,6 @@
 98 /ndn/es/urjc 132.227.62.163
 99 /ndn/es/urjc 128.252.153.194
 100 /ndn/ch/unibas 132.227.62.163
-101 /ndn/ch/unibas 161.105.195.18
 102 /ndn/es/urjc 192.43.193.111
 103 /ndn/cn/edu/pku 192.43.193.111
 104 /ndn/jp/waseda 114.247.165.44
@@ -94,7 +90,6 @@
 121 /ndn/com/orange 147.162.114.18
 122 /ndn/no/ntnu 129.10.52.193
 123 /ndn/no/ntnu 132.227.62.163
-125 /ndn/ch/unibas 129.241.208.115
 126 /ndn/cn/edu/pku 129.241.208.115
 127 /ndn/edu/memphis 72.13.58.118
 128 /ndn/edu/wustl 72.13.58.118
