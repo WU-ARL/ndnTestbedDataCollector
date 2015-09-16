@@ -21,7 +21,6 @@
 25 /ndn/edu/umich 132.227.62.163
 26 /ndn/fr/lip6 161.105.195.18
 28 /ndn/cn/edu/pku 114.247.165.44
-29 /ndn/cn/edu/bupt 202.120.188.176
 30 /ndn/com/orange 193.147.51.186
 31 /ndn/fr/lip6 193.147.51.186
 32 /ndn/edu/wustl 193.147.51.186
@@ -75,7 +74,6 @@
 92 /ndn/fr/lip6 141.212.108.18
 93 /ndn/com/orange 132.227.62.163
 94 /ndn/com/orange 141.225.11.173
-95 /ndn/cn/edu/bupt 162.105.146.26
 96 /ndn/cn/edu/tongji 114.247.165.44
 97 /ndn/es/urjc 161.105.195.18
 98 /ndn/es/urjc 132.227.62.163
@@ -91,7 +89,6 @@
 112 /ndn/edu/byu 128.97.98.7
 114 /ndn/jp/waseda 210.114.89.49
 115 /ndn/cn/edu/tongji 210.114.89.49
-116 /ndn/cn/edu/bupt 210.114.89.49
 117 /ndn/cn/edu/pku 210.114.89.49
 118 /ndn/it/unipd 72.36.112.82
 119 /ndn/it/unipd 192.43.193.111
@@ -106,5 +103,4 @@
 129 /ndn/edu/umich 72.13.58.118
 130 /ndn/kr/anyang 203.253.235.168
 131 /ndn/jp/waseda 203.253.235.168
-132 /ndn/cn/edu/bupt 203.253.235.168
 133 /ndn/edu/colostate 203.253.235.168
