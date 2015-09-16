@@ -18,7 +18,6 @@
 21 /ndn/edu/ucla/remap 128.195.4.36
 22 /ndn/org/caida 128.195.4.36
 23 /ndn/cn/edu/pku 202.120.188.176
-24 /ndn/org/caida 202.120.188.176
 25 /ndn/edu/umich 132.227.62.163
 26 /ndn/fr/lip6 161.105.195.18
 28 /ndn/cn/edu/pku 114.247.165.44
@@ -61,11 +60,9 @@
 69 /ndn/edu/memphis 141.212.108.18
 70 /ndn/edu/illinois 141.212.108.18
 71 /ndn/edu/colostate 141.212.108.18
-72 /ndn/org/caida 131.179.196.46
 74 /ndn/edu/colostate 128.97.98.7
 75 /ndn/edu/arizona 128.97.98.7
 76 /ndn/edu/arizona 128.252.153.194
-77 /ndn/org/caida 128.196.203.36
 80 /ndn/edu/illinois 129.82.138.48
 81 /ndn/edu/illinois 128.252.153.194
 82 /ndn/edu/memphis 128.252.153.194
