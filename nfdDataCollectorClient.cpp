@@ -211,7 +211,8 @@ namespace ndn {
     runScripts(ndn::Name& interestName)
     {
       std::string result, tmpString;
-      std::string prefix = "./scripts/";
+      //std::string prefix = "./scripts/";
+      std::string prefix = "/home/ndnops/ndn-ops/NOC/nfdDataCollection/scripts/";
       FILE* pipe;
       const char* cmd; 
       char buf[BUF_SIZE];

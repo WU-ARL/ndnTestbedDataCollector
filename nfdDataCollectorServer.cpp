@@ -36,7 +36,7 @@ public:
   , m_scheduler(m_io)
   , m_terminationSignalSet(m_io)
   {
-    m_mapServerAddr = "192.168.21.1";
+    m_mapServerAddr = "128.252.153.28:8080";
     m_pollPeriod = 1;
     m_timeoutPeriod = 500;
     
