@@ -116,7 +116,6 @@ class MyHandler(BaseHTTPServer.BaseHTTPRequestHandler):
         update = 0
 
     if "/get_ip_rtt.html" in s.path:
-      print "HELLO HAOWEI"
       s.send_response(200)
       s.send_header("Content-type", "text/html")
       s.end_headers()
