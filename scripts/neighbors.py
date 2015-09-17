@@ -15,7 +15,8 @@ links_file_name = ""
 if topo.RUN_IN_ONL == 1:
   links_file_name = 'linksList'
 else:
-  links_file_name = '../linksList.testbed'
+  #links_file_name = '../linksList.testbed'
+  links_file_name = '/home/ndnops/ndn-ops/NOC/nfdDataCollection/linksList.testbed'
 
 my_neighbors = dict()
 f = open(links_file_name, 'r') # for ONL
