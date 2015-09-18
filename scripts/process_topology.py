@@ -25,7 +25,7 @@ ip_prefix2site_prefix = dict()
 if RUN_IN_ONL == 1:
   f = open('../routers', 'r')
 else:
-  f = open('./routers.testbed', 'r')
+  f = open('/home/ndnops/ndn-ops/NOC/nfdDataCollection/routers.testbed', 'r')
 
 # urjc:es/urjc:insula:h44x1:192.168.44.1:lip6:orange:basel:padua:wu
 for line in f:
