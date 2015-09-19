@@ -67,14 +67,42 @@ def dump_rtt():
       #table = AsciiTable(table_data)
   #print table.table
 
+header = """ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+ 
+<div class="container">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th class="col-sm-1">Link ID</th>
+        <th class="col-sm-1">Link</th>
+        <th class="col-sm-4">RTT</th>
+      </tr>
+    </thead>
+"""
+ 
+tailer = """ </table>
+</div>
+"""
+ 
 def dump_rtt_html():
   table_code = ""
-  table_code += '<table>\n'
-  for link_id in id_rtt:
-    table_code += '<tr>\n'
-    table_code += '<td>'+str(link_id)+'</td><td>'+id_key[link_id]+'</td><td>'+str(id_rtt[link_id])+'</td>'+"\n"
-    table_code += '</tr>\n'
-  table_code += '</table>\n'
+  table_code += '<tbody>\n'
+  for link_id in range(0,140):
+    if link_id in id_rtt:
+      table_code += '<tr>\n'
+      table_code += '<td>'+str(link_id)+'</td><td>'+id_key[link_id]+'</td><td>'+str(id_rtt[link_id])+'</td>'+"\n"
+      table_code += '</tr>\n'
+  table_code += '</tbody>\n'
 
   return table_code
 
@@ -109,7 +137,7 @@ class MyHandler(BaseHTTPServer.BaseHTTPRequestHandler):
 
       global update
       update = update + 1
-      if update > 100:
+      if update > 200:
       #if update > 10:
         os.system('clear')
         dump_rtt()
@@ -119,13 +147,10 @@ class MyHandler(BaseHTTPServer.BaseHTTPRequestHandler):
       s.send_response(200)
       s.send_header("Content-type", "text/html")
       s.end_headers()
-      s.wfile.write("<html><head><title>IP RTT.</title></head>")
-      # s.wfile.write("<body><p>This is a test.</p>")
-      # If someone went to "http://something.somewhere.net/foo/bar/",
-      # then s.path equals "/foo/bar/".
-      # s.wfile.write("<p>You accessed path: %s</p>" % s.path)
+
+      s.wfile.write(header)
       s.wfile.write(dump_rtt_html())
-      s.wfile.write("</body></html>")
+      s.wfile.write(tailer)
 
 if __name__ == '__main__':
 
