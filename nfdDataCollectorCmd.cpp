@@ -307,6 +307,7 @@ public:
   onTimeout(const ndn::Interest& interest)
   {
     std::cout << "onTimeout: " << interest.getName() << std::endl;
+    m_io.stop();
   }
 
   void
