@@ -36,7 +36,7 @@ public:
   , m_scheduler(m_io)
   , m_terminationSignalSet(m_io)
   {
-    m_mapServerAddr = "128.252.153.28:8080";
+    m_mapServerAddr = "128.252.153.28:80";
     m_pollPeriod = 1;
     m_timeoutPeriod = 500;
     
@@ -90,7 +90,8 @@ public:
   void
   onData(const ndn::Interest& interest, ndn::Data& data, std::string linkPrefix)
   {
-    std::cout << "Data received for: " << interest.getName() << std::endl;
+    if (DEBUG)
+      std::cout << "Data received for: " << interest.getName() << std::endl;
 
     CollectorData reply;   
  
@@ -111,8 +112,10 @@ public:
 				storeLocally(buffer);	
 			else 
 			{
+                          if (DEBUG) {
 				std::cout << "Link prefix = " << linkPrefix << std::endl;
 				std::cout << buffer << std::endl;
+                          }
 			}
 
 			std::string cmdStr("http://");
