@@ -40,7 +40,7 @@ public:
   {
     m_mapServerAddr = "128.252.153.28:8080";
     m_pollPeriod = 1;
-    m_timeoutPeriod = 500;
+    m_timeoutPeriod = 2000;
     
     m_networkMonitor.reset(new util::NetworkMonitor(m_io));
     
