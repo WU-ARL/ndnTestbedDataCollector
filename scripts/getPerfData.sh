@@ -1,6 +1,8 @@
 #!/bin/bash
 DATE=`date`
 TIME=`date +%s.%N`
+TZ=`date +%Z`
+TZOFFSET=`date +%:::z`
 LOAD=`w | head -1`
 #TOP=`top -n 1 | grep "PID\|nfd" | grep -v nfdstat`
 #TOP=`top -n 1 | grep "nfd" | grep -v nfdstat`
@@ -11,6 +13,8 @@ PS=`ps -p $NFD_PID -o comm,pid,%cpu,%mem,rss,vsz,time`
 echo ""
 echo "$DATE"
 echo "TIME $TIME"
+echo "TZ $TZ"
+echo "TZOFFSET $TZOFFSET"
 echo ""
 #echo "$TOP"
 echo '> ps -p $NFD_PID -o comm,pid,%cpu,%mem,rss,vsz,time'
