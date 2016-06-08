@@ -28,23 +28,23 @@ def configure(conf):
 def build(bld):
 
 
-    bld(target='nfdDataCollectorCmd',
+    bld(target='ndnTestbedDataCollectorCmd',
       features='cxx cxxprogram',
-      source='nfdDataCollectorCmd.cpp',
+      source='ndnTestbedDataCollectorCmd.cpp',
       use='BOOST NDN_CXX LIBRT LIBRESOLV LEXPAT',
       lib='ndn-cxx boost_random',
       )
 
-    bld(target='nfdDataCollector_s',
+    bld(target='ndnTestbedDataCollectorServer',
       features='cxx cxxprogram',
-      source='nfdDataCollectorServer.cpp',
+      source='ndnTestbedDataCollectorServer.cpp',
       use='BOOST NDN_CXX LIBRT LIBRESOLV LEXPAT',
       lib='ndn-cxx boost_random',
       )
 
-    bld(target='nfdDataCollector_c',
+    bld(target='ndnTestbedDataCollectorClient',
       features='cxx cxxprogram',
-      source='nfdDataCollectorClient.cpp',
+      source='ndnTestbedDataCollectorClient.cpp',
       use='BOOST NDN_CXX LIBRT LIBRESOLV LEXPAT',
       lib='ndn-cxx boost_random',
       )

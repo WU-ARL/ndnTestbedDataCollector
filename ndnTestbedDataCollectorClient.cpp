@@ -10,7 +10,7 @@
 #include <ndn-cxx/encoding/buffer-stream.hpp>
 #include <unordered_set>
 #include <ndn-cxx/security/key-chain.hpp>
-#include "nfdDataCollector.hpp"
+#include "ndnTestbedDataCollector.hpp"
 
 #define APP_SUFFIX "/ndnmap/stats"
 #define SCRIPT_SUFFIX "/script"
@@ -212,7 +212,7 @@ namespace ndn {
     {
       std::string result, tmpString;
       //std::string prefix = "./scripts/";
-      std::string prefix = "/home/ndnops/ndn-ops/NOC/nfdDataCollection/scripts/";
+      std::string prefix = "/home/ndnops/ndn-ops/NOC/ndnTestbedDataCollector/scripts/";
       FILE* pipe;
       const char* cmd; 
       char buf[BUF_SIZE];
@@ -226,7 +226,7 @@ namespace ndn {
         
         pipe = popen(cmd, "r");
         if (!pipe) 
-          std::cerr << "Unable to run " << cmd << " - is the script in the nfdDataCollection directory?" << std::endl;
+          std::cerr << "Unable to run " << cmd << " - is the script in the ndnTestbedDataCollector directory?" << std::endl;
 
         result = "";
         while(!feof(pipe)) 
