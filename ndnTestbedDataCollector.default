@@ -1,0 +1,6 @@
+# defaults for nfdstat_c client
+
+# Local Prefix for Interests
+PREFIX="/ndn/edu/arizona/script"
+
+FLAGS=""
