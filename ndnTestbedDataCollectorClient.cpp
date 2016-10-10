@@ -77,7 +77,9 @@ namespace ndn {
 
       while (offset < buf->size())
       {
-        bool ok = Block::fromBuffer(buf, offset, block);
+        //bool ok = Block::fromBuffer(buf, offset, block);
+        bool ok;
+	std::tie(ok, block) = Block::fromBuffer(buf, offset);
         if (!ok)
         {
           std::cerr << "ERROR: cannot decode FaceStatus TLV" << std::endl;

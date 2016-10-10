@@ -59,10 +59,10 @@ public:
                                                   ndn::statusCollector::tlv::FaceId,
                                                   m_faceId);
     
-    totalLength += prependByteArrayBlock(encoder, ndn::statusCollector::tlv::LinkIp,
+    totalLength += encoder.prependByteArrayBlock(ndn::statusCollector::tlv::LinkIp,
                                          reinterpret_cast<const uint8_t*>(m_linkIp.c_str()), m_linkIp.size());
     
-    totalLength += prependByteArrayBlock(encoder, ndn::statusCollector::tlv::CurrentTime,
+    totalLength += encoder.prependByteArrayBlock(ndn::statusCollector::tlv::CurrentTime,
                                          reinterpret_cast<const uint8_t*>(m_timestamp.c_str()), m_timestamp.size());
     
     
@@ -349,7 +349,7 @@ public:
   {
     size_t bytes_encoded = 0;
 
-    bytes_encoded += prependByteArrayBlock(encoder, ndn::statusCollector::tlv::ScriptData, reinterpret_cast<const uint8_t*>(m_data.c_str()), m_data.size());
+    bytes_encoded += encoder.prependByteArrayBlock(ndn::statusCollector::tlv::ScriptData, reinterpret_cast<const uint8_t*>(m_data.c_str()), m_data.size());
     
     bytes_encoded += encoder.prependVarNumber(bytes_encoded);
     bytes_encoded += encoder.prependVarNumber(statusCollector::tlv::ScriptPacket);
