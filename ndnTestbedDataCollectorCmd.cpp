@@ -142,7 +142,8 @@ public:
             logfile << interest.getName() << std::endl << "FaceID: " << reply.m_statusList[i].getFaceId() << std::endl << "LinkIP: " << reply.m_statusList[i].getLinkIp() << std::endl << "Tx: " << reply.m_statusList[i].getTx() << std::endl << "Rx: " << reply.m_statusList[i].getRx() << std::endl << "Timestamp: " << reply.m_statusList[i].getTimestamp() << std::endl << std::endl;
           }
         } 
-        else if(logfile==NULL) 
+        //else if(logfile==NULL) 
+        else if(!logfile) 
         {
           std::cerr << "Error opening logfile for write" << std::endl;
         }
@@ -216,7 +217,8 @@ public:
     {
       logfile << buffer; 
     }
-    else if(logfile==NULL)
+    //else if (logfile==NULL)
+    else if (!logfile)
     {
       std::cerr << "Error opening logfile for write" << std::endl;
     }
@@ -352,7 +354,8 @@ public:
     std::string script_line;
 
     script_file.open(filename, std::fstream::in);
-    if (script_file == NULL)
+    //if (script_file == NULL)
+    if (!script_file)
     {
       std::cerr << "cannot open script file " << filename << std::endl;
       usage();
@@ -489,7 +492,8 @@ main(int argc, char* argv[])
     {
       case 'f':
         file.open(optarg, std::fstream::in);
-        if (file == NULL)
+        //if (file == NULL)
+        if (!file)
         {
           std::cout << "cannot open file " << optarg << std::endl;
           ndnmapServer.usage();
