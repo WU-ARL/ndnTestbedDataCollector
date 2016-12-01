@@ -93,7 +93,7 @@ public:
   onData(const ndn::Interest& interest, ndn::Data& data, std::string linkPrefix)
   {
     if(DEBUG) std::cout << "onData(): top" << std::endl;
-    std::cout << "Data received for: " << interest.getName() << std::endl;
+    //std::cout << "Data received for: " << interest.getName() << std::endl;
 
     CollectorData reply;   
  
@@ -115,7 +115,7 @@ public:
         storeLocally(buffer);	
       else 
       {
-        std::cout << "Link prefix = " << linkPrefix << std::endl;
+        //std::cout << "Link prefix = " << linkPrefix << std::endl;
         std::cout << buffer << std::endl;
       }
 
