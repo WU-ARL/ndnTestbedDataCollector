@@ -8,6 +8,6 @@ LOAD3=`w | grep "load average" | awk -F: '{print $NF}' | cut -d ',' --output-del
 #PS=`ps -p $NFD_PID -o comm,%cpu,%mem`
 
 
-NFD_CPU_MEM_PERCENTS=` ps aux | sed -n '/\/usr\/bin\/nfd /s/ \+/ /gp' | cut -d ' ' -f 3,4`
+NFD_CPU_MEM_PERCENTS=` ps aux | sed -n '/\/usr\/bin\/nfd /s/ \+/ /gp' | cut -d ' ' -f 3,4,5`
 #echo "$PS"
 echo "$LOAD3 $NFD_CPU_MEM_PERCENTS"
