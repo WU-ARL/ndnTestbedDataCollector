@@ -6,7 +6,7 @@
 
 #include <boost/asio.hpp>
 #include <ndn-cxx/face.hpp>
-#include <ndn-cxx/management/nfd-face-status.hpp>
+#include <ndn-cxx/mgmt/nfd/face-status.hpp>
 #include <ndn-cxx/encoding/buffer-stream.hpp>
 #include <unordered_set>
 #include <ndn-cxx/security/key-chain.hpp>
@@ -44,6 +44,12 @@ namespace ndn {
       exit(1);
     }
     
+    void
+    onNack(const Interest& interest)
+    {
+      std::cout << "onNack" << std::endl;
+    }
+
     void
     onTimeout(const Interest& interest)
     {
@@ -146,6 +152,7 @@ namespace ndn {
       {
         m_face.expressInterest(data.getName().getPrefix(-1).appendSegment(currentSegment+1),
                                bind(&NdnMapClient::fetchSegments, this, _2, buffer, remoteName, onDone),
+                               bind(&NdnMapClient::onNack, this, _1), //nack
                                bind(&NdnMapClient::onTimeout, this, _1));
       }
       else
@@ -166,6 +173,7 @@ namespace ndn {
       m_face.expressInterest(interest,
                              bind(&NdnMapClient::fetchSegments, this, _2, buffer, remoteInterestName,
                                   &NdnMapClient::afterFetchedFaceStatusInformation),
+                             bind(&NdnMapClient::onNack, this, _1), //nack
                              bind(&NdnMapClient::onTimeout, this, _1));
       
       m_face.processEvents(time::milliseconds(100));

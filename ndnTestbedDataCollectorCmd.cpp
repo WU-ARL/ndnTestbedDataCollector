@@ -90,7 +90,21 @@ public:
   }
 
   void
-  onData(const ndn::Interest& interest, ndn::Data& data, std::string linkPrefix)
+  onNack(const ndn::Interest& interest)
+  {
+    std::cout << "onNack: " << interest.getName() << std::endl;
+    m_io.stop();
+  }
+
+  void
+  onTimeout(const ndn::Interest& interest)
+  {
+    std::cout << "onTimeout: " << interest.getName() << std::endl;
+    m_io.stop();
+  }
+
+  void
+  onData(const ndn::Interest& interest, const ndn::Data& data, std::string linkPrefix)
   {
     if(DEBUG) std::cout << "onData(): top" << std::endl;
     //std::cout << "Data received for: " << interest.getName() << std::endl;
@@ -283,6 +297,7 @@ public:
 
             m_face.expressInterest(j,
                                 bind(&NdnMapServer::onData, this, _1, _2, it->first),
+                                bind(&NdnMapServer::onNack, this, _1), //nack
                                 bind(&NdnMapServer::onTimeout, this, _1));
 
             if(DEBUG) std::cout << "SENT: " << scripts << std::endl;
@@ -303,13 +318,6 @@ public:
       if(DEBUG) std::cout << "singleScript: returned from processSingleEvent(), callng exit(0)" << std::endl;
       exit(0);
     }
-  }
-
-  void
-  onTimeout(const ndn::Interest& interest)
-  {
-    std::cout << "onTimeout: " << interest.getName() << std::endl;
-    m_io.stop();
   }
 
   void
